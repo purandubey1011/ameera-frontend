@@ -37,7 +37,7 @@ const TasteOfAmeera = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true,amount:.5 }}
+      viewport={{ once: true,amount:.2 }}
       className="bg-[#F5F1E6] py-16 px-6 sm:px-12 lg:px-0 font-['Inter']"
     >
       {/* Heading */}

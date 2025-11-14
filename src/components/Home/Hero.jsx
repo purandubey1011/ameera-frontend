@@ -5,6 +5,23 @@ import Navbar from "../Navbar";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
+// Parent container animation
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15, // how fast next item appears
+      ease: "easeOut",
+    },
+  },
+};
+
+// Children animations
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
 const Hero = () => {
   const navigate = useNavigate();
 
@@ -20,7 +37,7 @@ const Hero = () => {
       <motion.div
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 4, ease: "easeOut" }}
+        transition={{ duration: 3, ease: "easeOut" }}
         className="absolute inset-0"
         style={{
           background:
@@ -31,14 +48,16 @@ const Hero = () => {
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Content */}
-      <div className="relative z-10 flex flex-col justify-center md:justify-end items-center md:items-start min-h-screen px-10 md:px-24 md:pb-24 pb-10">
-
+      {/* Hero Content with stagger */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="relative z-10 flex flex-col justify-center md:justify-end items-center md:items-start min-h-screen px-10 md:px-24 md:pb-24 pb-10"
+      >
         {/* Title */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={fadeUp}
           className="text-6xl md:text-8xl font-serif font-semibold mb-3"
         >
           Ameera’s
@@ -46,9 +65,7 @@ const Hero = () => {
 
         {/* Decorative Line Vector */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: .8, duration: 0.8 }}
+          variants={fadeUp}
           className="absolute top-[54vh] left-[10vw] -z-10"
         >
           <img
@@ -58,31 +75,22 @@ const Hero = () => {
         </motion.div>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.7 }}
-          className="text-lg md:text-xl font-normal mb-10"
-        >
+        <motion.p variants={fadeUp} className="text-lg md:text-xl font-normal mb-10">
           Intimate flavours. Timeless hospitality.
         </motion.p>
 
         {/* Button */}
         <motion.button
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
+          variants={fadeUp}
           onClick={() => navigate("/booking")}
           className="bg-white text-black px-6 py-3 text-sm font-normal hover:bg-amber-400 hover:text-black rounded-lg"
         >
           Reserve Your Table
         </motion.button>
 
-        {/* Ratings Section */}
+        {/* Ratings */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
+          variants={fadeUp}
           className="flex items-center mt-12 space-x-3"
         >
           <IoIosPeople className="text-3xl text-amber-400" />
@@ -94,7 +102,7 @@ const Hero = () => {
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

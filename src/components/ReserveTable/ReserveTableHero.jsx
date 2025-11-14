@@ -1,7 +1,24 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
 import { ToastContainer, toast } from "react-toastify";
+import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 25 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
+
+const staggerParent = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.12 }
+  }
+};
 
 const ReserveTableHero = () => {
   const [form, setForm] = useState({
@@ -14,16 +31,14 @@ const ReserveTableHero = () => {
 
   const [errors, setErrors] = useState({});
 
-  // ✅ Handle Input Change
+  // Handle Inputs
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); // Clear error as user types
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  // ✅ Validation Logic
   const validateForm = () => {
     const newErrors = {};
-
     if (!form.name.trim()) newErrors.name = "Name is required.";
     if (!form.mobile.trim()) newErrors.mobile = "Mobile number is required.";
     else if (!/^[0-9]{10}$/.test(form.mobile.trim()))
@@ -38,10 +53,8 @@ const ReserveTableHero = () => {
     return newErrors;
   };
 
-  // ✅ Handle Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -63,13 +76,18 @@ const ReserveTableHero = () => {
 
       if (response.ok) {
         toast.success("Form submitted successfully!");
-        setForm({ name: "", mobile: "", email: "", company: "", enquiry: "" });
+        setForm({
+          name: "",
+          mobile: "",
+          email: "",
+          company: "",
+          enquiry: "",
+        });
         setErrors({});
       } else {
         toast.error(data.error || "Something went wrong.");
       }
     } catch (err) {
-      console.error("Error submitting form:", err);
       toast.error("Network error — please try again later.");
     }
   };
@@ -79,29 +97,40 @@ const ReserveTableHero = () => {
       <Navbar />
 
       <div className="bg-[#f9eadd] min-h-[90vh] flex flex-col items-center justify-center py-8 px-4">
-        {/* Toast Container */}
         <ToastContainer position="top-center" autoClose={3000} hideProgressBar />
 
-        {/* Title */}
-        <div className="text-center max-w-2xl">
+        {/* Title Animation */}
+        <motion.div
+          className="text-center max-w-2xl"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-[#1f392a] mb-4">
             CONTACT & RESERVATIONS
           </h1>
           <p className="text-[#1f392a] text-base md:text-lg leading-relaxed">
-            We’d love to host you. Whether it’s an intimate dinner, a
-            celebration, or an evening for two we’ll make it unforgettable.
+            We’d love to host you. Whether it’s an intimate dinner, a celebration,
+            or an evening for two we’ll make it unforgettable.
           </p>
           <p className="text-sm text-[#1f392a] mt-6">
-            Fill out the form, and our team will get back to you as soon as
-            possible!
+            Fill out the form, and our team will get back to you as soon as possible!
           </p>
-        </div>
+        </motion.div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="mt-10 w-full max-w-lg space-y-5">
+        {/* FORM with staggering */}
+        <motion.form
+          onSubmit={handleSubmit}
+          className="mt-10 w-full max-w-lg space-y-5"
+          variants={staggerParent}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {/* Row 1 */}
           <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1">
+            <motion.div variants={fadeUp} className="flex-1">
               <input
                 type="text"
                 name="name"
@@ -117,9 +146,9 @@ const ReserveTableHero = () => {
               {errors.name && (
                 <p className="text-[#b41c0e] text-xs mt-1">{errors.name}</p>
               )}
-            </div>
+            </motion.div>
 
-            <div className="flex-1">
+            <motion.div variants={fadeUp} className="flex-1">
               <input
                 type="text"
                 name="mobile"
@@ -135,11 +164,11 @@ const ReserveTableHero = () => {
               {errors.mobile && (
                 <p className="text-[#b41c0e] text-xs mt-1">{errors.mobile}</p>
               )}
-            </div>
+            </motion.div>
           </div>
 
           {/* Email */}
-          <div>
+          <motion.div variants={fadeUp}>
             <input
               type="email"
               name="email"
@@ -155,20 +184,22 @@ const ReserveTableHero = () => {
             {errors.email && (
               <p className="text-[#b41c0e] text-xs mt-1">{errors.email}</p>
             )}
-          </div>
+          </motion.div>
 
           {/* Company */}
-          <input
-            type="text"
-            name="company"
-            placeholder="Company/Restaurant/Pub/Individual"
-            value={form.company}
-            onChange={handleChange}
-            className="w-full border border-[#1f392a]/50 bg-transparent px-4 py-3 text-[#1f392a] placeholder-[#1f392a]/70 focus:outline-none focus:border-[#1f392a]"
-          />
+          <motion.div variants={fadeUp}>
+            <input
+              type="text"
+              name="company"
+              placeholder="Company/Restaurant/Pub/Individual"
+              value={form.company}
+              onChange={handleChange}
+              className="w-full border border-[#1f392a]/50 bg-transparent px-4 py-3 text-[#1f392a] placeholder-[#1f392a]/70 focus:outline-none focus:border-[#1f392a]"
+            />
+          </motion.div>
 
           {/* Enquiry */}
-          <div>
+          <motion.div variants={fadeUp}>
             <input
               type="text"
               name="enquiry"
@@ -184,18 +215,20 @@ const ReserveTableHero = () => {
             {errors.enquiry && (
               <p className="text-[#b41c0e] text-xs mt-1">{errors.enquiry}</p>
             )}
-          </div>
+          </motion.div>
 
-          {/* Submit */}
-          <div className="text-center pt-4">
-            <button
+          {/* Button */}
+          <motion.div variants={fadeUp} className="text-center pt-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               type="submit"
               className="bg-[#1f392a] text-white px-10 py-2 font-medium hover:bg-[#14261c] transition-all duration-200"
             >
               Submit
-            </button>
-          </div>
-        </form>
+            </motion.button>
+          </motion.div>
+        </motion.form>
       </div>
     </div>
   );

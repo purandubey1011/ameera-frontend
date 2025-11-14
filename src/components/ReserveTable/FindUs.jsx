@@ -1,44 +1,77 @@
 import React from "react";
-import { FaMapMarkerAlt, FaEnvelope, FaFacebookF, FaInstagram,FaTwitter, FaLinkedinIn, FaPhoneAlt, FaClock } from "react-icons/fa";
+import { motion } from "framer-motion";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+  FaPhoneAlt,
+  FaClock,
+} from "react-icons/fa";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const softFadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: .8, ease: "easeOut" },
+  },
+};
 
 const FindUs = () => {
   return (
-    <div className="bg-[#1A322D] text-white py-16 px-6 md:px-20">
+    <motion.div
+      className="bg-[#1A322D] text-white py-16 px-6 md:px-20"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+    >
       <div className="max-w-6xl mx-auto">
+
         {/* Heading */}
-        <div className="text-center md:text-left mb-12">
+        <motion.div variants={softFadeUp} className="text-center md:text-left mb-12">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3">
             Find Us
           </h2>
           <p className="text-[#c7d1cc] text-base">
             Reach out for bookings, inquiries, or personalized packages!
           </p>
-        </div>
+        </motion.div>
 
-        {/* Content Grid */}
+        {/* Grid */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-20">
-          {/* Left Column */}
-          <div className="space-y-6">
-            {/* Address */}
-            <div >
+
+          {/* Left */}
+          <motion.div variants={container} className="space-y-6">
+
+            <motion.div variants={softFadeUp}>
               <div className="flex items-center gap-3 text-lg mb-2">
                 <FaMapMarkerAlt className="text-[#c7d1cc]" />
                 <h3 className="font-semibold">Address</h3>
               </div>
               <p className="text-[#c7d1cc] leading-relaxed ml-7">
                 123 Example Street, Toronto, ON M4B 1B3. <br />
-                <a
-                  href="#"
-                  className="italic underline text-white hover:text-[#dcdcdc]"
-                >
+                <a href="#" className="italic underline text-white hover:text-[#dcdcdc]">
                   Click Map
                 </a>
               </p>
-            </div>
+            </motion.div>
+
             <hr className="border-[#c7d1cc]/30" />
 
-            {/* Email */}
-            <div>
+            <motion.div variants={softFadeUp}>
               <div className="flex items-center gap-3 text-lg mb-2">
                 <FaEnvelope className="text-[#c7d1cc]" />
                 <h3 className="font-semibold">Email Us</h3>
@@ -53,11 +86,11 @@ const FindUs = () => {
                 <br />
                 <span className="italic text-sm">(click-to-mail)</span>
               </p>
-            </div>
+            </motion.div>
+
             <hr className="border-[#c7d1cc]/30" />
 
-            {/* Social Media */}
-            <div className="flex items-center gap-4">
+            <motion.div variants={softFadeUp} className="flex items-center gap-4">
               <p className="font-semibold font-serif">Follow Us :</p>
               <div className="flex items-center gap-4 text-[#c7d1cc]">
                 <a href="#" className="hover:text-white border-2 p-2 rounded-full">
@@ -73,13 +106,13 @@ const FindUs = () => {
                   <FaLinkedinIn />
                 </a>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Right Column */}
-          <div className="space-y-8">
-            {/* Operating Hours */}
-            <div>
+          {/* Right */}
+          <motion.div variants={container} className="space-y-8">
+
+            <motion.div variants={softFadeUp}>
               <div className="flex items-center gap-3 text-lg mb-2">
                 <FaClock className="text-[#c7d1cc]" />
                 <h3 className="font-semibold">Operating Hours</h3>
@@ -88,31 +121,29 @@ const FindUs = () => {
                 Tuesday—Sunday: 12:00 PM — 11:00 PM <br />
                 Closed on Mondays
               </p>
-            </div>
+            </motion.div>
+
             <hr className="border-[#c7d1cc]/30" />
 
-            {/* Contact Details */}
-            <div>
+            <motion.div variants={softFadeUp}>
               <div className="flex items-center gap-3 text-lg mb-2">
                 <FaPhoneAlt className="text-[#c7d1cc]" />
                 <h3 className="font-semibold">Contact Details</h3>
               </div>
               <p className="text-[#c7d1cc] ml-7">
-                <a
-                  href="tel:+14165551234"
-                  className="underline hover:text-[#dcdcdc]"
-                >
+                <a href="tel:+14165551234" className="underline hover:text-[#dcdcdc]">
                   +1 (416) 555-1234
                 </a>
                 <br />
                 <span className="italic text-sm">(click-to-call)</span>
               </p>
-            </div>
+            </motion.div>
+
             <hr className="border-[#c7d1cc]/30" />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

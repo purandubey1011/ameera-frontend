@@ -1,13 +1,27 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Navbar from "../Navbar";
 
 const Menuhero = () => {
-  // 👉 Add your Google Drive menu links here
-  const DINING_MENU_LINK = "https://drive.google.com/file/d/1VuGbInbON6tBIZWj6kX-zlW0RILnOg1R/view?usp=drivesdk";
-  const COCKTAIL_MENU_LINK = "#";
+  const DINING_MENU_LINK =
+    "https://drive.google.com/file/d/1VuGbInbON6tBIZWj6kX-zlW0RILnOg1R/view?usp=drivesdk";
 
   const openMenu = (link) => {
     window.open(link, "_blank");
+  };
+
+  // Stagger Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.20 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: .8, ease: "easeOut" } },
   };
 
   return (
@@ -24,41 +38,53 @@ const Menuhero = () => {
         {/* Soft Overlay */}
         <div className="absolute inset-0 bg-black/10"></div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center">
+        {/* Animated Content */}
+        <motion.div
+          className="relative z-10 flex flex-col items-center justify-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+        >
           {/* Heading */}
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-[#1f392a] mb-4 tracking-wide">
+          <motion.h1
+            variants={itemVariants}
+            className="text-3xl md:text-5xl font-serif font-bold text-[#1f392a] mb-4 tracking-wide"
+          >
             Explore Our Menus
-          </h1>
+          </motion.h1>
 
           {/* Paragraph */}
-          <p className="text-[#1f392a]/90 text-base md:text-lg max-w-2xl mb-10 leading-relaxed">
+          <motion.p
+            variants={itemVariants}
+            className="text-[#1f392a]/90 text-base md:text-lg max-w-2xl mb-10 leading-relaxed"
+          >
             Discover a blend of flavors crafted by our culinary experts. From
-            elegant dining selections to handcrafted cocktails— explore our
+            elegant dining selections to handcrafted cocktails — explore our
             menus and indulge in the Ameera’s experience.
-          </p>
+          </motion.p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            {/* Dining Menu Button */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4"
+          >
             <button
               onClick={() => openMenu(DINING_MENU_LINK)}
               className="bg-[#1f392a] text-white px-10 py-3 text-lg rounded-sm
-                       hover:bg-[#14261c] transition-all duration-200 shadow-md font-medium"
+                         hover:bg-[#14261c]  duration-100 shadow-md font-medium"
             >
               View Dining Menu
             </button>
 
-            {/* Cocktail Menu Button */}
             <button
-            //   onClick={() => openMenu(COCKTAIL_MENU_LINK)}
               className="border border-[#1f392a] text-[#1f392a] px-10 py-3 text-lg rounded-sm
-                       hover:bg-[#1f392a] hover:text-white transition-all duration-200 shadow-md font-medium"
+                         hover:bg-[#1f392a] hover:text-white  duration-100 shadow-md font-medium"
             >
               View Cocktail Menu
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Bookyourtable = () => {
   return (
@@ -10,24 +11,56 @@ const Bookyourtable = () => {
       }}
     >
       {/* Overlay for dark fade */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <motion.div
+        className="absolute inset-0 bg-black/50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.4 }} // 👈 scroll trigger
+      ></motion.div>
 
       {/* Border Frame */}
-      <div className="absolute inset-10 border border-white/60 pointer-events-none"></div>
+      <motion.div
+        className="absolute inset-10 border border-white/60 pointer-events-none"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        viewport={{ once: true, amount: 0.4 }} // 👈 scroll trigger
+      ></motion.div>
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl px-4 text-white">
-        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 tracking-tight">
+        <motion.h1
+          className="text-6xl md:text-7xl font-extrabold mb-6 tracking-tight"
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }} // 👈 scroll triggered
+        >
           BOOK YOUR TABLE
-        </h1>
-        <p className="text-lg md:text-xl leading-relaxed mb-8 font-medium">
+        </motion.h1>
+
+        <motion.p
+          className="text-lg md:text-xl leading-relaxed mb-8 font-medium"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           RESERVE YOUR TABLE NOW AND LET US SAVE YOU A SPOT. WHETHER IT’S A
           CASUAL HANGOUT OR A SPECIAL CELEBRATION, WE’VE GOT THE PERFECT TABLE
           WAITING FOR YOU.
-        </p>
-        <button className="px-6 py-3 bg-white text-black font-semibold rounded-none shadow-md hover:bg-gray-200 transition-all">
+        </motion.p>
+
+        <motion.button
+          className="px-6 py-3 bg-white text-black font-semibold rounded-none shadow-md hover:bg-gray-200 transition-all"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           Make The Reservation
-        </button>
+        </motion.button>
       </div>
     </section>
   );

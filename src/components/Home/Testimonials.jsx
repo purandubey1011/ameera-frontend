@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -32,62 +33,73 @@ export default function Testimonials() {
 
   return (
     <section className="relative bg-[#0F2E28] text-white py-24 h-[85vh] md:h-[95vh]">
-      {/* Large faded heading (absolute) */}
+      {/* Large faded heading */}
       <h2 className="absolute top-8 left-1/2 -translate-x-1/2 text-[5vh] md:text-[8.5rem] font-extrabold text-white/6 tracking-widest uppercase pointer-events-none select-none">
         Testimonials
       </h2>
 
-      {/* Decorative vector lines - centered, subtle */}
+      {/* Decorative lines */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none top-60">
         <div className="w-[72%] h-[56%] relative">
-          {/* thin horizontal lines */}
           <div className="absolute left-0 right-0 top-8 border-t border-white/8" />
           <div className="absolute left-0 right-0 bottom-8 border-t border-white/8" />
-          {/* thin vertical lines */}
           <div className="absolute top-0 bottom-0 left-8 border-l border-white/8" />
           <div className="absolute top-0 bottom-0 right-8 border-l border-white/8" />
         </div>
       </div>
 
-      {/* Main content area: centered card */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 top-20 md:top-60">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 justify-center">
-          {/* Left spacer vertical line (thin) */}
+
           <div className="hidden md:block w-8 border-l border-white/6 h-40" />
 
-          {/* Image */}
-          <div className="flex-shrink-0">
-            <div className="w-56 h-56 rounded-sm overflow-hidden shadow-lg">
-              <img
-                src={testimonials[active].image}
-                alt={testimonials[active].name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+          {/* ⬇️ Animated Content Wrapper */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12"
+            >
+              {/* Image */}
+              <div className="flex-shrink-0">
+                <div className="w-56 h-56 rounded-sm overflow-hidden shadow-lg">
+                  <motion.img
+                    key={testimonials[active].image}
+                    src={testimonials[active].image}
+                    alt={testimonials[active].name}
+                    className="w-full h-full object-cover"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.45 }}
+                  />
+                </div>
+              </div>
 
-          {/* Quote box */}
-          <div className="max-w-xl text-left text-[#E8D9B5]">
-            <p className="italic text-base md:text-lg leading-relaxed">
-              “{testimonials[active].quote}”
-            </p>
-            <div className="mt-4">
-              <p className="font-semibold text-white">{testimonials[active].name}</p>
-              <p className="text-xs text-[#C0B68B] mt-1">{testimonials[active].role}</p>
-            </div>
-          </div>
+              {/* Quote */}
+              <div className="max-w-xl text-left text-[#E8D9B5]">
+                <p className="italic text-base md:text-lg leading-relaxed">
+                  “{testimonials[active].quote}”
+                </p>
+                <div className="mt-4">
+                  <p className="font-semibold text-white">{testimonials[active].name}</p>
+                  <p className="text-xs text-[#C0B68B] mt-1">{testimonials[active].role}</p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-          {/* Right spacer vertical line (thin) */}
           <div className="hidden md:block w-8 border-l border-white/6 h-40" />
         </div>
 
-        {/* thin horizontal separators left & right (like reference) */}
         <div className="hidden md:flex items-center justify-between mt-8">
           <div className="w-40 border-t border-white/8" />
           <div className="w-40 border-t border-white/8" />
         </div>
 
-        {/* Dots pagination */}
+        {/* Dots */}
         <div className="flex justify-center gap-4 mt-8">
           {testimonials.map((_, i) => (
             <button

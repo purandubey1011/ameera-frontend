@@ -35,14 +35,14 @@ const AboutAmeera = () => {
         >
           {/* Main Image */}
           <img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/aboutamera.jpg?updatedAt=1763197795528"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/ammerahero.jpg?updatedAt=1762848859123"
             alt="Chef cooking at Ameera’s"
             className="w-full h-full object-cover"
           />
 
           {/* Black Overlay */}
           <div className="absolute inset-0 bg-black/20"></div>
-          
+
           {/* Frame Image (overlapping) */}
           <img
             src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/frameaboutameera.png?updatedAt=1763204915799"

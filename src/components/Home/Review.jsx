@@ -15,9 +15,9 @@ const Review = () => {
           viewport={{ once: true }}
         >
           {/* Vertical Line */}
-          <div className="absolute top-0 bottom-0 left-1/2 w-[1.4px] bg-[#F5F1E6]/30 -translate-x-1/2"></div>
+          <div className="absolute top-0 bottom-0 left-1/2 w-[1.7px] bg-[#F5F1E6]/30 -translate-x-1/2"></div>
           {/* Horizontal Line */}
-          <div className="absolute left-0 right-0 top-1/2 h-[1.8px] bg-[#F5F1E6]/30 -translate-y-1/2"></div>
+          <div className="absolute left-0 right-0 top-1/2 h-[1.7px] bg-[#F5F1E6]/30 -translate-y-1/2"></div>
 
           {[
             { num: "2", label: "Michelin Stars" },
@@ -37,8 +37,8 @@ const Review = () => {
               }}
               viewport={{ once: true }}
             >
-              <h3 className="text-5xl font-semibold mb-2">{item.num}</h3>
-              <p className="text-lg tracking-wide">{item.label}</p>
+              <h3 className="text-4xl md:text-5xl font-semibold mb-2">{item.num}</h3>
+              <p className="text-md text-center md:text-lg tracking-wide">{item.label}</p>
             </motion.div>
           ))}
         </motion.div>

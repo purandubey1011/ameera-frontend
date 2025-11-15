@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 // Parent animation container
 const container = {
@@ -28,13 +28,26 @@ const AboutAmeera = () => {
       className="bg-[#FFF2E6] py-24 px-6 md:px-16 lg:px-24 text-[#181D12]"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
         {/* Image Section */}
-        <motion.div variants={fadeUp} className="w-full md:w-[75%]">
+        <motion.div
+          variants={fadeUp}
+          className="relative w-full md:w-[75%] h-[60vh] md:h-[80vh] overflow-hidden"
+        >
+          {/* Main Image */}
           <img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/image.png?updatedAt=1762852047307"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/aboutamera.jpg?updatedAt=1763197795528"
             alt="Chef cooking at Ameera’s"
-            className="rounded-[20px]"
+            className="w-full h-full object-cover"
+          />
+
+          {/* Black Overlay */}
+          <div className="absolute inset-0 bg-black/20"></div>
+          
+          {/* Frame Image (overlapping) */}
+          <img
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/frameaboutameera.png?updatedAt=1763204915799"
+            alt="Decorative Frame"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           />
         </motion.div>
 
@@ -51,13 +64,13 @@ const AboutAmeera = () => {
             variants={fadeUp}
             className="text-base md:text-lg leading-relaxed mb-4 text-gray-600"
           >
-            At Ameera’s, we celebrate heritage through a modern lens.  
-            Our kitchen pairs seasonal produce with classic techniques, while the bar
-            reimagines timeless cocktails with house infusions and fragrant bitters.  
-            Come slow down, savour the details, and let our team take care of the rest.
+            At Ameera’s, we celebrate heritage through a modern lens. Our
+            kitchen pairs seasonal produce with classic techniques, while the
+            bar reimagines timeless cocktails with house infusions and fragrant
+            bitters. Come slow down, savour the details, and let our team take
+            care of the rest.
           </motion.p>
         </motion.div>
-
       </div>
     </motion.section>
   );

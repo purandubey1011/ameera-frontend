@@ -30,11 +30,11 @@ const AboutAmeera = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         {/* Image Section */}
-        <motion.div variants={fadeUp} className="w-full md:w-[80%]">
+        <motion.div variants={fadeUp} className="w-full md:w-[75%]">
           <img
             src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/image.png?updatedAt=1762852047307"
             alt="Chef cooking at Ameera’s"
-            className="rounded-[20px] shadow-lg border-[8px] border-[#FFF3E9]"
+            className="rounded-[20px]"
           />
         </motion.div>
 

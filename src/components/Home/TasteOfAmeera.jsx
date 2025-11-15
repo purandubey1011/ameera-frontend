@@ -8,27 +8,27 @@ const TasteOfAmeera = () => {
     {
       title: "Lunch",
       image:
-        "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&q=80&w=710",
+        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/taste%20of%20ameera/timg6.jpg?updatedAt=1763198518740",
     },
     {
       title: "Drinks",
       image:
-        "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=687",
+        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/taste%20of%20ameera/timg7.jpg?updatedAt=1763198518817",
     },
     {
       title: "Bottomless Options",
       image:
-        "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&q=80&w=765",
+        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/taste%20of%20ameera/timg3.jpg?updatedAt=1763198518828",
     },
     {
       title: "Dessert",
       image:
-        "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&q=80&w=687",
+        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/taste%20of%20ameera/timg1.jpg?updatedAt=1763198518756",
     },
     {
       title: "Drinks",
       image:
-        "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&q=80&w=722",
+        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/taste%20of%20ameera/timg4.jpg?updatedAt=1763198530104",
     },
   ];
 

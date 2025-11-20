@@ -3,30 +3,31 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Talia Taylor",
+    name: "Emily Carter",
     role: "Happy Customer",
     quote:
-      "Nullam sit amet sem metus. Nam nec metus eu dui viverra nec nibh. Donec euismod malesuada, quis egestas eget. Vivamus quam erat aliquet.",
+      "Absolutely wonderful experience. The ambience feels warm and elegant, and the flavours reminded me of the fine dining spots in downtown Toronto. Will definitely visit again!",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
+      "https://imgs.search.brave.com/sTYBJiPfyTdUjD6aQi9E2zgXPiYCQHYryy-6DALe9WY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9j/YW5hZGEtZGF5LWNl/bGVicmF0aW9uLXdp/dGgtbWFwbGUtbGVh/Zi1zeW1ib2xfMjMt/MjE1MTQ0MDQ1MC5q/cGc_c2VtdD1haXNf/aXRlbXNfYm9vc3Rl/ZCZ3PTc0MA",
   },
   {
-    name: "Daniel Smith",
+    name: "Ethan McKenzie",
     role: "Satisfied Guest",
     quote:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "The service here was incredibly friendly, and the food had a rich, authentic taste. Reminded me of the restaurants in Vancouver’s waterfront district. Highly recommended!",
     image:
       "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170",
   },
   {
-    name: "Sophia Brown",
+    name: "Olivia Martin",
     role: "Regular Visitor",
     quote:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+      "Ameera has become my favourite spot in Calgary. Cozy atmosphere, beautiful presentation, and the flavours taste genuinely handcrafted. A perfect place for a weekend dinner.",
     image:
       "https://images.unsplash.com/photo-1664312557922-8fe1a7425425?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
+
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);

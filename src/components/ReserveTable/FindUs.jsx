@@ -25,7 +25,7 @@ const softFadeUp = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: .8, ease: "easeOut" },
+    transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 
@@ -39,9 +39,11 @@ const FindUs = () => {
       viewport={{ once: true, amount: 0.25 }}
     >
       <div className="max-w-6xl mx-auto">
-
         {/* Heading */}
-        <motion.div variants={softFadeUp} className="text-center md:text-left mb-12">
+        <motion.div
+          variants={softFadeUp}
+          className="text-center md:text-left mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3">
             Find Us
           </h2>
@@ -52,18 +54,20 @@ const FindUs = () => {
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-10 md:gap-20">
-
           {/* Left */}
           <motion.div variants={container} className="space-y-6">
-
             <motion.div variants={softFadeUp}>
               <div className="flex items-center gap-3 text-lg mb-2">
                 <FaMapMarkerAlt className="text-[#c7d1cc]" />
                 <h3 className="font-semibold">Address</h3>
               </div>
               <p className="text-[#c7d1cc] leading-relaxed ml-7">
-                123 Example Street, Toronto, ON M4B 1B3. <br />
-                <a href="#" className="italic underline text-white hover:text-[#dcdcdc]">
+                959 Derry Rd E Unit 3, Mississauga, ON L5T 2J8, Canada <br />
+                <a
+                  href="https://maps.app.goo.gl/rb7voARwe6cfWQi5A"
+                  target="_blank"
+                  className="italic underline text-white hover:text-[#dcdcdc]"
+                >
                   Click Map
                 </a>
               </p>
@@ -90,19 +94,34 @@ const FindUs = () => {
 
             <hr className="border-[#c7d1cc]/30" />
 
-            <motion.div variants={softFadeUp} className="flex items-center gap-4">
+            <motion.div
+              variants={softFadeUp}
+              className="flex items-center gap-4"
+            >
               <p className="font-semibold font-serif">Follow Us :</p>
               <div className="flex items-center gap-4 text-[#c7d1cc]">
-                <a href="#" className="hover:text-white border-2 p-2 rounded-full">
+                <a
+                  href="#"
+                  className="hover:text-white border-2 p-2 rounded-full"
+                >
                   <FaFacebookF />
                 </a>
-                <a href="#" className="hover:text-white border-2 p-2 rounded-full">
+                <a
+                  href="#"
+                  className="hover:text-white border-2 p-2 rounded-full"
+                >
                   <FaInstagram />
                 </a>
-                <a href="#" className="hover:text-white border-2 p-2 rounded-full">
+                <a
+                  href="#"
+                  className="hover:text-white border-2 p-2 rounded-full"
+                >
                   <FaTwitter />
                 </a>
-                <a href="#" className="hover:text-white border-2 p-2 rounded-full">
+                <a
+                  href="#"
+                  className="hover:text-white border-2 p-2 rounded-full"
+                >
                   <FaLinkedinIn />
                 </a>
               </div>
@@ -111,15 +130,13 @@ const FindUs = () => {
 
           {/* Right */}
           <motion.div variants={container} className="space-y-8">
-
             <motion.div variants={softFadeUp}>
               <div className="flex items-center gap-3 text-lg mb-2">
                 <FaClock className="text-[#c7d1cc]" />
                 <h3 className="font-semibold">Operating Hours</h3>
               </div>
               <p className="text-[#c7d1cc] ml-7 leading-relaxed">
-                Tuesday—Sunday: 12:00 PM — 11:00 PM <br />
-                Closed on Mondays
+                Wednesday—Tuesday: 5:00 PM - 2:00 AM <br />
               </p>
             </motion.div>
 
@@ -131,8 +148,11 @@ const FindUs = () => {
                 <h3 className="font-semibold">Contact Details</h3>
               </div>
               <p className="text-[#c7d1cc] ml-7">
-                <a href="tel:+14165551234" className="underline hover:text-[#dcdcdc]">
-                  +1 (416) 555-1234
+                <a
+                  href="tel:+19427888881"
+                  className="underline hover:text-[#dcdcdc]"
+                >
+                  +1 942-788-8881
                 </a>
                 <br />
                 <span className="italic text-sm">(click-to-call)</span>

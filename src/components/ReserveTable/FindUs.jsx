@@ -9,6 +9,7 @@ import {
   FaLinkedinIn,
   FaPhoneAlt,
   FaClock,
+  FaWhatsapp
 } from "react-icons/fa";
 
 const container = {
@@ -100,30 +101,46 @@ const FindUs = () => {
             >
               <p className="font-semibold font-serif">Follow Us :</p>
               <div className="flex items-center gap-4 text-[#c7d1cc]">
+                {/* Instagram */}
                 <a
-                  href="#"
-                  className="hover:text-white border-2 p-2 rounded-full"
-                >
-                  <FaFacebookF />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.instagram.com/ameeras_ca?igsh=bGN3dWYyZDNxdHN4&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white border-2 p-2 rounded-full"
                 >
                   <FaInstagram />
                 </a>
+
+                {/* WhatsApp */}
                 <a
-                  href="#"
+                  href="https://wa.me/19427888881"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white border-2 p-2 rounded-full"
                 >
-                  <FaTwitter />
+                  <FaWhatsapp />
                 </a>
-                <a
-                  href="#"
-                  className="hover:text-white border-2 p-2 rounded-full"
-                >
-                  <FaLinkedinIn />
+
+                {/* Facebook (Disabled) */}
+                {/*
+                <a href="#" className="hover:text-white border-2 p-2 rounded-full">
+                  <FaFacebookF />
                 </a>
+                */}
+
+                {/* Twitter (Disabled) */}
+                {/*
+                  <a href="#" className="hover:text-white border-2 p-2 rounded-full">
+                    <FaTwitter />
+                  </a>
+                  */}
+
+                {/* LinkedIn (Disabled) */}
+                {/*
+                  <a href="#" className="hover:text-white border-2 p-2 rounded-full">
+                    <FaLinkedinIn />
+                  </a>
+                  */}
               </div>
             </motion.div>
           </motion.div>

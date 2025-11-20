@@ -1,7 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiMapPin } from "react-icons/fi";
-import { FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaFacebook,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -48,17 +54,31 @@ const Footer = () => {
           />
 
           <div className="flex justify-center gap-6 text-2xl border-t border-[#E3C28D]/30 w-full pt-4">
-            {[FaInstagram, FaYoutube, FaLinkedin, FaFacebook].map(
-              (Icon, idx) => (
-                <motion.div
-                  whileHover={{ scale: 1.25 }}
-                  whileTap={{ scale: 0.95 }}
-                  key={idx}
-                >
-                  <Icon className="cursor-pointer" />
-                </motion.div>
-              )
-            )}
+            {[
+              {
+                icon: FaInstagram,
+                link: "https://www.instagram.com/ameeras_ca?igsh=bGN3dWYyZDNxdHN4&utm_source=qr",
+              },
+              {
+                icon: FaWhatsapp,
+                link: "https://wa.me/19427888881",
+              },
+
+              // { icon: FaYoutube, link: "#" },
+              // { icon: FaLinkedin, link: "#" },
+              // { icon: FaFacebook, link: "#" },
+            ].map((item, idx) => (
+              <motion.a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.25 }}
+                whileTap={{ scale: 0.95 }}
+                key={idx}
+              >
+                <item.icon className="cursor-pointer" />
+              </motion.a>
+            ))}
           </div>
         </motion.div>
 
@@ -67,22 +87,20 @@ const Footer = () => {
           <h3 className="font-semibold text-lg mb-4 tracking-wide">
             Quick Links
           </h3>
+
           <ul className="space-y-1">
             {[
-              "Our Beers",
-              "Our Brewery",
-              "Find Our Beer",
-              "Brewery Walk & Events",
-              "About us",
-              "Blog",
-              "Contact us",
+              { label: "Home", link: "/" },
+              { label: "Menu", link: "/menu" },
+              { label: "Booking", link: "/booking" },
+              { label: "Contact us", link: "/reserve-table" },
             ].map((item, i) => (
               <motion.li key={i} variants={fadeUp} className="list-none">
                 <a
-                  href="#"
+                  href={item.link}
                   className="text-[#E3C28D]/85 hover:text-[#E3C28D] text-[15px] transition-colors"
                 >
-                  {item}
+                  {item.label}
                 </a>
               </motion.li>
             ))}
@@ -145,7 +163,7 @@ const Footer = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-white text-[#07231C] font-semibold text-sm tracking-wide hover:bg-[#E3C28D] hover:text-black transition"
             >
-             <a href="/reserve-table">Make An Enquiry</a> 
+              <a href="/reserve-table">Make An Enquiry</a>
             </motion.button>
           </div>
 

@@ -40,8 +40,7 @@ const Hero = () => {
         transition={{ duration: 3, ease: "easeOut" }}
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(to bottom, #181D1200 50%, #181D12 100%)",
+          background: "linear-gradient(to bottom, #181D1200 50%, #181D12 100%)",
         }}
       ></motion.div>
 
@@ -55,27 +54,43 @@ const Hero = () => {
         animate="show"
         className="relative z-10 flex flex-col justify-center md:justify-end items-center md:items-start min-h-screen px-10 md:px-24 md:pb-24 pb-10"
       >
-        {/* Title */}
-        <motion.h1
-          variants={fadeUp}
-          className="text-6xl md:text-8xl font-serif font-semibold mb-3"
-        >
-          Ameera’s
-        </motion.h1>
+        {/* Title + Line Wrapper */}
+        <motion.div variants={fadeUp} className="relative inline-block mb-3">
+          <h1 className="text-6xl md:text-8xl font-serif font-semibold">
+            Ameera’s
+          </h1>
 
-        {/* Decorative Line Vector */}
-        <motion.div
-          variants={fadeUp}
-          className="absolute top-[53vh] left-[10vw] -z-10"
-        >
+          {/* Decorative Line Vector */}
           <img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/lineVector.png?updatedAt=1762851425377"
-            alt=""
-          />
+  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/lineVector.png?updatedAt=1762851425377"
+  alt=""
+  className="
+    absolute -z-10 left-1/2 -translate-x-1/2
+    pointer-events-none select-none
+
+    w-[80vw]       
+    sm:w-[70vw]    
+    md:w-[55vw]   
+    lg:w-[45vw]   
+    xl:w-[40vw]    
+    2xl:w-[35vw]   
+
+    bottom-[0vh]   
+    sm:bottom-[0vh]
+    md:bottom-[0vh]
+    lg:bottom-[0vh]
+    xl:bottom-[0vh]
+    2xl:bottom-[0vh]
+  "
+/>
+
         </motion.div>
 
         {/* Subtitle */}
-        <motion.p variants={fadeUp} className="text-lg md:text-xl font-normal mb-10">
+        <motion.p
+          variants={fadeUp}
+          className="text-lg md:text-xl font-normal mb-10"
+        >
           Intimate flavours. Timeless hospitality.
         </motion.p>
 

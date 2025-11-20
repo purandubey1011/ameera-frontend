@@ -35,7 +35,7 @@ const AboutAmeera = () => {
         >
           {/* Main Image */}
           <img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/ammerahero.jpg?updatedAt=1762848859123"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/imgg3.jpg?updatedAt=1763109992314"
             alt="Chef cooking at Ameera’s"
             className="w-full h-full object-cover"
           />

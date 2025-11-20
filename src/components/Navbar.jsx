@@ -85,7 +85,7 @@ const Navbar = () => {
               }}
               className="flex flex-col items-center space-y-8"
             >
-              {["Home", "Contact Us", "Booking"].map((item, i) => (
+              {["Home",  "Booking","Contact Us"].map((item, i) => (
                 <motion.div
                   key={i}
                   variants={{

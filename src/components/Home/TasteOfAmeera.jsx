@@ -5,11 +5,11 @@ const TasteOfAmeera = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const items = [
-    {
-      title: "Lunch",
-      image:
-        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/A7403573.jpg",
-    },
+    // {
+    //   title: "Lunch",
+    //   image:
+    //     "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/A7403573.jpg",
+    // },
     {
       title: "Drinks",
       image:
@@ -62,7 +62,7 @@ const TasteOfAmeera = () => {
             viewport={{ once: true }}
             className={`relative h-[400px] sm:h-[300px] overflow-hidden cursor-pointer transition-all duration-700 ease-in-out ${
               activeIndex === index
-                ? "flex-[1.5]"
+                ? "flex-[1.3]"
                 : activeIndex === null
                 ? "flex-1"
                 : "flex-[0.7]"

@@ -35,14 +35,14 @@ const Navbar = () => {
         <Link to="/" className="hover:text-amber-400 transition-colors">
           Home
         </Link>
+        <Link to="/booking" className="hover:text-amber-400 transition-colors">
+          Booking
+        </Link>
         <Link
           to="/reserve-table"
           className="hover:text-amber-400 transition-colors"
         >
           Contact Us
-        </Link>
-        <Link to="/booking" className="hover:text-amber-400 transition-colors">
-          Booking
         </Link>
       </ul>
 

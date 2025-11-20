@@ -6,7 +6,7 @@ const Menuhero = () => {
   const DINING_MENU_LINK =
     "https://drive.google.com/file/d/1VuGbInbON6tBIZWj6kX-zlW0RILnOg1R/view?usp=drivesdk";
   const COCKTAIL_MENU_LINK =
-    "https://drive.google.com/file/d/1FPeI9r7ckRrKDPasTT4nZ5H33JEW2TZ7/view?usp=sharing";
+    "https://drive.google.com/file/d/14Bw5t2sv5T-pu821h5MBa2wv1WBV7OFH/view?usp=drivesdk";
 
   const openMenu = (link) => {
     window.open(link, "_blank");

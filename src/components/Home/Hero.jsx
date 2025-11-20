@@ -66,7 +66,7 @@ const Hero = () => {
         {/* Decorative Line Vector */}
         <motion.div
           variants={fadeUp}
-          className="absolute top-[54vh] left-[10vw] -z-10"
+          className="absolute top-[53vh] left-[10vw] -z-10"
         >
           <img
             src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/lineVector.png?updatedAt=1762851425377"

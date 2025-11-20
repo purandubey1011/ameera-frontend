@@ -37,7 +37,7 @@ const Footer = () => {
         {/* --- Logo + Socials --- */}
         <motion.div variants={fadeUp} className="flex flex-col items-center justify-between px-10 py-8">
           <motion.img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/logo%20ameera.png?updatedAt=1762856954788"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/Ameeras.png"
             alt="Ameera Logo"
             className="w-48 md:w-56 mb-8"
             initial={{ scale: 0.85, opacity: 0 }}

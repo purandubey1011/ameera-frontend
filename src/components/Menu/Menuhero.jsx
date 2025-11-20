@@ -5,6 +5,8 @@ import Navbar from "../Navbar";
 const Menuhero = () => {
   const DINING_MENU_LINK =
     "https://drive.google.com/file/d/1VuGbInbON6tBIZWj6kX-zlW0RILnOg1R/view?usp=drivesdk";
+  const COCKTAIL_MENU_LINK =
+    "https://drive.google.com/file/d/1FPeI9r7ckRrKDPasTT4nZ5H33JEW2TZ7/view?usp=sharing";
 
   const openMenu = (link) => {
     window.open(link, "_blank");
@@ -15,13 +17,13 @@ const Menuhero = () => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.20 },
+      transition: { staggerChildren: 0.2 },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: .8, ease: "easeOut" } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   return (
@@ -78,8 +80,9 @@ const Menuhero = () => {
             </button>
 
             <button
+              onClick={() => openMenu(COCKTAIL_MENU_LINK)}
               className="border border-[#1f392a] text-[#1f392a] px-10 py-3 text-lg rounded-sm
-                         hover:bg-[#1f392a] hover:text-white  duration-100 shadow-md font-medium"
+             hover:bg-[#1f392a] hover:text-white duration-100 shadow-md font-medium"
             >
               View Cocktail Menu
             </button>

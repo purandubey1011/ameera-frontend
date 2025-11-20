@@ -9,18 +9,20 @@ const fadeUp = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 const staggerParent = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.12 }
-  }
+    transition: { staggerChildren: 0.12 },
+  },
 };
 
 const ReserveTableHero = () => {
+  const [loading, setLoading] = useState(false);
+
   const [form, setForm] = useState({
     name: "",
     mobile: "",
@@ -62,6 +64,8 @@ const ReserveTableHero = () => {
       return;
     }
 
+    setLoading(true); // ⭐ START LOADING
+
     try {
       const response = await fetch(
         "https://ameera-backend.onrender.com/api/v1/form/contact-us",
@@ -90,6 +94,8 @@ const ReserveTableHero = () => {
     } catch (err) {
       toast.error("Network error — please try again later.");
     }
+
+    setLoading(false); // ⭐ STOP LOADING
   };
 
   return (
@@ -97,7 +103,11 @@ const ReserveTableHero = () => {
       <Navbar />
 
       <div className="bg-[#f9eadd] min-h-[90vh] flex flex-col items-center justify-center py-8 px-4">
-        <ToastContainer position="top-center" autoClose={3000} hideProgressBar />
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar
+        />
 
         {/* Title Animation */}
         <motion.div
@@ -111,11 +121,12 @@ const ReserveTableHero = () => {
             CONTACT & RESERVATIONS
           </h1>
           <p className="text-[#1f392a] text-base md:text-lg leading-relaxed">
-            We’d love to host you. Whether it’s an intimate dinner, a celebration,
-            or an evening for two we’ll make it unforgettable.
+            We’d love to host you. Whether it’s an intimate dinner, a
+            celebration, or an evening for two we’ll make it unforgettable.
           </p>
           <p className="text-sm text-[#1f392a] mt-6">
-            Fill out the form, and our team will get back to you as soon as possible!
+            Fill out the form, and our team will get back to you as soon as
+            possible!
           </p>
         </motion.div>
 
@@ -220,12 +231,53 @@ const ReserveTableHero = () => {
           {/* Button */}
           <motion.div variants={fadeUp} className="text-center pt-4">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={!loading ? { scale: 1.05 } : {}}
+              whileTap={!loading ? { scale: 0.95 } : {}}
               type="submit"
-              className="bg-[#1f392a] text-white px-10 py-2 font-medium hover:bg-[#14261c] transition-all duration-200"
+              disabled={loading}
+              className={`bg-[#1f392a] text-white px-10 py-3 font-medium transition-all duration-200 flex items-center justify-center mx-auto
+      ${loading ? "opacity-70 cursor-not-allowed" : "hover:bg-[#14261c]"}`}
             >
-              Submit
+              {/* Loader or Text */}
+              {loading ? (
+                <motion.div
+                  className="flex gap-1"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <motion.span
+                    className="w-2 h-2 bg-white rounded-full"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{
+                      duration: 0.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <motion.span
+                    className="w-2 h-2 bg-white rounded-full"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{
+                      duration: 0.5,
+                      repeat: Infinity,
+                      delay: 0.15,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <motion.span
+                    className="w-2 h-2 bg-white rounded-full"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{
+                      duration: 0.5,
+                      repeat: Infinity,
+                      delay: 0.3,
+                      ease: "easeInOut",
+                    }}
+                  />
+                </motion.div>
+              ) : (
+                "Submit"
+              )}
             </motion.button>
           </motion.div>
         </motion.form>

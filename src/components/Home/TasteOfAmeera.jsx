@@ -8,7 +8,7 @@ const TasteOfAmeera = () => {
     {
       title: "Lunch",
       image:
-        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/taste%20of%20ameera/timg6.jpg?updatedAt=1763198518740",
+        "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/A7403573.jpg",
     },
     {
       title: "Drinks",

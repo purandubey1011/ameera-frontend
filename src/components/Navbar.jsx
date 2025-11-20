@@ -23,9 +23,9 @@ const Navbar = () => {
       <div className="flex items-center space-x-2 z-50">
         <Link to="/">
           <img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/logo%20ameera.png?updatedAt=1762856954788"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/Ameeras.png"
             alt="Ameera Logo"
-            className="h-12"
+            className="h-18"
           />
         </Link>
       </div>

@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
-  {
-    name: "ThisisInderjeet",
-    role: "Family Vacation Guest",
-    quote:
-      "Taste of Delhi in the Heart of Mississauga. I recently visited Ameera’s and it was an amazing experience from start to finish. We ordered the noodles, cauliflower Manchurian, and the mini aloo tikki sliders—and every dish was delicious. The aloo tikki sliders especially stood out: perfectly crispy, flavorful, and honestly one of my favorites of the night. The service was great as well. The food arrived promptly, and the staff was friendly and attentive throughout the evening. The only area for improvement would be the hookah service—no one came around to replenish the coal, so it would be nice to have someone assigned to regularly check on that. That said, the hookah itself was smooth and enjoyable.",
+  // {
+  //   name: "ThisisInderjeet",
+  //   role: "Family Vacation Guest",
+  //   quote:
+  //     "Taste of Delhi in the Heart of Mississauga. I recently visited Ameera’s and it was an amazing experience from start to finish. We ordered the noodles, cauliflower Manchurian, and the mini aloo tikki sliders—and every dish was delicious. The aloo tikki sliders especially stood out: perfectly crispy, flavorful, and honestly one of my favorites of the night. The service was great as well. The food arrived promptly, and the staff was friendly and attentive throughout the evening. The only area for improvement would be the hookah service—no one came around to replenish the coal, so it would be nice to have someone assigned to regularly check on that. That said, the hookah itself was smooth and enjoyable.",
     
-      image:
-      "https://imgs.search.brave.com/3Q_VE9oV7RGhwVBdb0YQbw7Ba0ccHn2nlNcCypqwvmQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RlL2M3/LzM0L2RlYzczNDA4/MmNmM2QyZjI3OTFi/ZjYxMmZjNmI3NzQz/LmpwZw",
-    className: "scale-100",
-  },
+  //     image:
+  //     "https://imgs.search.brave.com/3Q_VE9oV7RGhwVBdb0YQbw7Ba0ccHn2nlNcCypqwvmQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RlL2M3/LzM0L2RlYzczNDA4/MmNmM2QyZjI3OTFi/ZjYxMmZjNmI3NzQz/LmpwZw",
+  //   className: "scale-100",
+  // },
 
   {
     name: "Sadiya 6069",
@@ -41,15 +41,15 @@ const testimonials = [
       "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/review4.png",
   },
 
-  {
-    name: "Gavy Dhillon",
-    role: "Family Vacation Guest",
-    quote:
-      "Absolutely love this place! The vibe is super chill, the hookah hits smooth, and the staff (Jashan) are always friendly and attentive. The music sets the perfect mood — not too loud, just right for conversations. Tried a few flavors and every one was top quality. Definitely my go-to hookah spot in town!",
-    image:
-      "https://plus.unsplash.com/premium_photo-1666265087910-7bee95f118a3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "scale-100 object-top",
-  },
+  // {
+  //   name: "Gavy Dhillon",
+  //   role: "Family Vacation Guest",
+  //   quote:
+  //     "Absolutely love this place! The vibe is super chill, the hookah hits smooth, and the staff (Jashan) are always friendly and attentive. The music sets the perfect mood — not too loud, just right for conversations. Tried a few flavors and every one was top quality. Definitely my go-to hookah spot in town!",
+  //   image:
+  //     "https://plus.unsplash.com/premium_photo-1666265087910-7bee95f118a3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   className: "scale-100 object-top",
+  // },
 ];
 
 

@@ -29,7 +29,7 @@ const testimonials = [
     quote:
       "I had a wonderful experience at Ameera’s. Loved the drink — great presentation and incredible taste. The food was authentic and full of rich flavors, especially the curries and freshly baked naan. The staff were friendly, attentive, and made the dining experience very pleasant. The atmosphere was warm and welcoming. Highly recommend to anyone craving authentic Indian cuisine. Their Tres Leches dessert is an absolute must-try!",
     image:
-      "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/image.png",
+      "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/image.png?updatedAt=1763975112307",
   },
 
   {

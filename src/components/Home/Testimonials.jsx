@@ -9,7 +9,7 @@ const testimonials = [
       "Taste of Delhi in the Heart of Mississauga. I recently visited Ameera’s and it was an amazing experience from start to finish. We ordered the noodles, cauliflower Manchurian, and the mini aloo tikki sliders—and every dish was delicious. The aloo tikki sliders especially stood out: perfectly crispy, flavorful, and honestly one of my favorites of the night. The service was great as well. The food arrived promptly, and the staff was friendly and attentive throughout the evening. The only area for improvement would be the hookah service—no one came around to replenish the coal, so it would be nice to have someone assigned to regularly check on that. That said, the hookah itself was smooth and enjoyable.",
     
       image:
-      "https://cdn.pixabay.com/photo/2022/03/11/06/14/indian-man-7061278_1280.jpg",
+      "https://imgs.search.brave.com/3Q_VE9oV7RGhwVBdb0YQbw7Ba0ccHn2nlNcCypqwvmQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RlL2M3/LzM0L2RlYzczNDA4/MmNmM2QyZjI3OTFi/ZjYxMmZjNmI3NzQz/LmpwZw",
     className: "scale-100",
   },
 
@@ -29,7 +29,7 @@ const testimonials = [
     quote:
       "I had a wonderful experience at Ameera’s. Loved the drink — great presentation and incredible taste. The food was authentic and full of rich flavors, especially the curries and freshly baked naan. The staff were friendly, attentive, and made the dining experience very pleasant. The atmosphere was warm and welcoming. Highly recommend to anyone craving authentic Indian cuisine. Their Tres Leches dessert is an absolute must-try!",
     image:
-      "https://imgs.search.brave.com/D0_fslMeV_Y5KP9-EPuiq5wIx1IwgzVTdqpjqVS3oO0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjA5/OTgyMTM0Mi9waG90/by9ncmF0ZWZ1bC15/b3VuZy1tYW4taW5o/YWxpbmctYW5kLWZl/ZWxpbmctcnVyYWwt/c21lbGwtb24tYmFs/Y29ueS1mYXJtLWlu/bi5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9VnVQTUtPcGhM/Wk16RXBxdktfZW0z/MVZhYVFNanBnQ25i/dGhZSGt5VGZGVT0",
+      "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/image.png",
   },
 
   {
@@ -38,7 +38,7 @@ const testimonials = [
     quote:
       "We had an amazing experience thanks to Simran! She was incredibly friendly, knowledgeable, and so informative. We especially loved the fire play she did on the Ruby Sangria cocktail — such a fun touch! We came to celebrate our friend’s birthday and the atmosphere, food, and overall vibe were perfect. Thank you, Simran, for making our night even more special!",
     image:
-      "https://cdn.pixabay.com/photo/2021/06/28/18/54/man-6372430_1280.jpg",
+      "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/review4.png",
   },
 
   {
@@ -47,12 +47,10 @@ const testimonials = [
     quote:
       "Absolutely love this place! The vibe is super chill, the hookah hits smooth, and the staff (Jashan) are always friendly and attentive. The music sets the perfect mood — not too loud, just right for conversations. Tried a few flavors and every one was top quality. Definitely my go-to hookah spot in town!",
     image:
-      "https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/more%20ameera%20img/lastone.png",
-    className: "scale-125",
+      "https://plus.unsplash.com/premium_photo-1666265087910-7bee95f118a3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    className: "scale-100 object-top",
   },
 ];
-
-
 
 
 export default function Testimonials() {

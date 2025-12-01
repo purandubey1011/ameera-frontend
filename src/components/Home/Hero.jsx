@@ -10,7 +10,7 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.15, // how fast next item appears
+      staggerChildren: 0.15,
       ease: "easeOut",
     },
   },
@@ -26,14 +26,32 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="relative min-h-screen bg-cover bg-center text-white overflow-hidden"
-      style={{
-        backgroundImage:
-          "url('https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/ammerahero.jpg?updatedAt=1762848859123')",
-      }}
-    >
-      {/* Background Zoom Animation */}
+    <div className="relative min-h-screen text-white overflow-hidden">
+
+      {/* ------- DESKTOP/TABLET BACKGROUND IMAGE ------- */}
+      <div
+        className="hidden sm:block absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/ammerahero.jpg?updatedAt=1762848859123')",
+        }}
+      ></div>
+
+      {/* ------- MOBILE BACKGROUND VIDEO ------- */}
+      <video
+        className="block sm:hidden absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/ameera-front-video.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Background Zoom Animation (works on both img/video) */}
       <motion.div
         initial={{ scale: 1.15 }}
         animate={{ scale: 1 }}
@@ -54,7 +72,7 @@ const Hero = () => {
         animate="show"
         className="relative z-10 flex flex-col justify-center md:justify-end items-center md:items-start min-h-screen px-10 md:px-24 md:pb-24 pb-10"
       >
-        {/* Title + Line Wrapper */}
+        {/* Title + Line Vector */}
         <motion.div variants={fadeUp} className="relative inline-block mb-3">
           <h1 className="text-6xl md:text-8xl font-serif font-semibold">
             Ameera’s
@@ -62,28 +80,22 @@ const Hero = () => {
 
           {/* Decorative Line Vector */}
           <img
-  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/lineVector.png?updatedAt=1762851425377"
-  alt=""
-  className="
-    absolute -z-10 left-1/2 -translate-x-1/2
-    pointer-events-none select-none
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/ameera/lineVector.png?updatedAt=1762851425377"
+            alt=""
+            className="
+              absolute -z-10 left-1/2 -translate-x-1/2
+              pointer-events-none select-none
 
-    w-[80vw]       
-    sm:w-[70vw]    
-    md:w-[55vw]   
-    lg:w-[45vw]   
-    xl:w-[40vw]    
-    2xl:w-[35vw]   
+              w-[80vw]       
+              sm:w-[70vw]    
+              md:w-[55vw]   
+              lg:w-[45vw]   
+              xl:w-[40vw]    
+              2xl:w-[35vw]   
 
-    bottom-[0vh]   
-    sm:bottom-[0vh]
-    md:bottom-[0vh]
-    lg:bottom-[0vh]
-    xl:bottom-[0vh]
-    2xl:bottom-[0vh]
-  "
-/>
-
+              bottom-[0vh]
+            "
+          />
         </motion.div>
 
         {/* Subtitle */}

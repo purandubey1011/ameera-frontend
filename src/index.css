@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&display=swap');
 
 /* Hide scrollbar for Chrome, Safari, Edge */
 .no-scrollbar::-webkit-scrollbar {
@@ -9,4 +10,10 @@
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  /* font-weight: 500;
+  font-style: normal; */
 }
